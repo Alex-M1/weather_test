@@ -1,0 +1,42 @@
+{
+    "feels": {
+        "ru": "Ощущается",
+        "en": "Feels",
+        "uk": "Відчувається"
+    },
+    "humidity": {
+        "ru": "Влажность",
+        "en": "Humidity",
+        "uk": "Вологість"
+    },
+    "pressure": {
+        "ru": "Давление",
+        "en": "Pressure",
+        "uk": "Тиск"
+    },
+    "windSpeed": {
+        "ru": "Скорость ветра",
+        "en": "Wind speed",
+        "uk": "Швидкість вітру"
+    },
+    "windDirection": {
+        "ru": "Направление ветра",
+        "en": "Direction of the wind",
+        "uk": "Напрямок вітру"
+    },
+    "copy": {
+        "ru": "Все права защищены",
+        "en": "All rights reserved",
+        "uk": "Всі права захищені"
+    },
+    "share": {
+        "ru": "Поделиться",
+        "en": "Share",
+        "uk": "Поділитися"
+    },
+    "toMain": {
+        "ru": "На главную",
+        "en": "To main page",
+        "uk": "На головну"
+    }
+}

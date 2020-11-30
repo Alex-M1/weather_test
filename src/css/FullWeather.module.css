@@ -1,0 +1,134 @@
+.weather_main{
+    text-align: center;
+}
+.weather_main p{
+    margin: 10px 0;
+}
+.city{
+    font-size: 56px;
+}
+.temp{
+    font-size: 70px;
+    font-weight: 700;
+}
+.weather_secondary{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15%;
+    align-items: center;
+}
+.weatherImg{
+    justify-self: end;
+}
+.description{
+    width: 270px;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.features{
+    display: grid;
+    grid-template-columns: 5fr 2fr 5fr;
+    align-items: center;
+}
+.features_left{
+    justify-self: end;
+}
+.divider{
+    border: 1px solid #242424;
+    width: 0;
+    height: 40px;
+    justify-self: center;
+}
+.forecastItem{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.forecastItem__date{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forecastItem__temp{
+    width: 100%;
+    font-size: 20px;
+    padding: 5px 0; 
+    text-align: center;
+}
+@media  (max-width: 768px){
+    .forecastItem__img{
+        width: 80px;
+    }
+
+}
+@media  (max-width: 576px){
+    .city{
+        font-size: 35px;
+    }
+    .temp{
+        font-size: 40px;
+    }
+    .description{
+        font-size: 14px;
+    }
+    .weatherImg{
+        width: 50px;
+    }
+    .forecastItem__img{
+        width: 60px;
+    }
+    .forecastItem__temp{
+        font-size: 16px;
+    }
+}
+@media  (max-width: 425px){
+
+    .description{
+        width: 165px;
+    }
+    .features{
+        grid-template-columns: 4 1fr 4fr ;
+        font-size: 14px;
+    }
+    .forecastItem__img{
+        width: 40px;
+    }
+
+    .forecastItem__temp, .forecastItem__date{
+        font-size: 12px;
+    }
+}
+@media  (max-width: 375px){
+    .weather_secondary{
+        column-gap: 0;
+    }
+    .weatherImg{
+        margin-left: 35%;
+        justify-self: start;
+    }
+    .divider{
+        display: none;
+    }
+    .features{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .features div{
+        margin-left: 20%;
+    }
+    .features div p{
+        margin-top: 0;
+    }
+    .forecastItem__img{
+        width: 35px;
+    }
+
+    .forecastItem__temp, .forecastItem__date{
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,51 @@
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer__lang{
+    display: flex;
+
+}
+.footer__lang_item{
+    margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.footer__lang_item:hover{
+    color: #777777;
+}
+.shareButtons{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top:35%;
+    transition-duration: 0.5s;
+}
+
+@media  (max-width: 425px){
+    .footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        'c b'
+        'l l'
+        ;
+    }
+    .footer__copy{
+        font-size: 12px;
+        grid-area: c;    
+    }
+    .footer__lang{
+        font-size: 12px;
+        margin-top: 10px;
+        grid-area: l;
+    }
+    .share{
+        grid-area: b;
+        justify-self: end;
+    }
+    
+}
