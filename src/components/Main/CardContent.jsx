@@ -5,7 +5,7 @@ import styles from '../../css/Main.module.css'
 function CardContent({ changePath, weather }) {
     return (
         <NavLink
-            to={`/city_${weather.id}`}
+            to={`/city/${weather.id}`}
             style={{ textDecoration: 'none', color: 'inherit', width: '100%' }}
             onClick={changePath}
         >

@@ -7,10 +7,10 @@ import CardContent from './CardContent'
 export default function WeatherCard(props) {
     let weather = props.currentWeather
     const deleteCity = () => {
-        localStorage.removeItem(`city_${weather.id}`)
+        localStorage.removeItem(`city/${weather.id}`)
         props.setCurrentWeather()
     }
-    const changePath = () => props.setPath(`/city_${weather.id}`)
+    const changePath = () => props.setPath(`/city/${weather.id}`)
     return (
         <div className={styles.weatherCard}  >
             <DeleteCity deleteCity={deleteCity} />

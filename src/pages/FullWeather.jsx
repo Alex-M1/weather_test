@@ -5,10 +5,11 @@ import { getForecast, getWeatherFromId } from '../thunks/weather'
 import FullWeatherMain from '../components/FullWeather/FullWeatherMain'
 import Forecast from '../components/FullWeather/Forecast'
 import { tempBg } from '../assets/tempbg'
+import { withRouter } from 'react-router'
 
 
 function FullWeather(props) {
-    let path = window.location.pathname.split('_')[1],
+    let path = props.match.params.id,
         weather
 
     useEffect(() => {
@@ -40,4 +41,4 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, {
     getWeatherFromId, getForecast
-})(FullWeather)
+})(withRouter(FullWeather))

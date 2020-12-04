@@ -10,20 +10,15 @@ export default function Forecast(props) {
 
     return (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-            {temp.map((el, i) => {
-                if (el === tempMax) return <Graph
-                    margin={0}
+            {temp.map((el, i) =>
+                <Graph
+                    margin={el === tempMax ? 0 : (tempMax - el) * 5}
                     bg={props.tempBg(el)}
                     data={props.forecast.list[i]}
                     key={props.forecast.city.id + Math.random() * 100}
                 />
-                else return <Graph
-                    margin={(tempMax - el) * 5}
-                    bg={props.tempBg(el)}
-                    data={props.forecast.list[i]}
-                    key={props.forecast.city.id + Math.random() * 100}
-                />
-            })}
+            )}
+
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import { Container } from '@material-ui/core'
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 import WeatherCard from '../components/Main/WeatherCard'
 import styles from '../css/Main.module.css'
 import { setCurrentWeather, setPath } from '../reducers/weather-reducer'
@@ -23,23 +24,6 @@ function Main(props) {
                 />
             })}
         </div>
-    useEffect(() => {
-        card =
-            <div className={styles.weatherCard__block}>
-                {props.currentWeather.map(el => {
-                    return <WeatherCard
-                        currentWeather={el}
-                        key={el.id}
-                        getWeatherFromId={props.getWeatherFromId}
-                        isRefresh={props.isRefresh}
-                        refreshId={props.refreshId}
-                        setCurrentWeather={props.setCurrentWeather}
-                        setPath={props.setPath}
-                        lang={props.lang}
-                    />
-                })}
-            </div>
-    }, [props.currentWeather])
 
     if (localStorage.length === 0) {
         let geo = navigator.geolocation
@@ -74,4 +58,4 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
     getWeatherFromCoord, getWeatherFromId, setCurrentWeather, setPath
-})(Main)
+})(withRouter(Main))

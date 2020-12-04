@@ -17,7 +17,11 @@ const AppRouter = props => {
                 <Header />
                 <Switch>
                     <Route exact path='/' component={Main} />
-                    {props.currentWeather.map(el => <Route path={`/city_${el.id}`} component={FullWeather} key={el.id} />)}
+                    {props.currentWeather.map(el => <Route
+                        path={`/city/:id`}
+                        component={FullWeather}
+                        key={el.id}
+                    />)}
                     <Route other component={NotFound} />
                 </Switch>
                 <Footer />

@@ -7,7 +7,7 @@ export const getWeatherFromId = (id, lang) => dispatch => {
     dispatch(setRefresh(true, id))
     weatherAPI.getCurrentWeatherfromId(id, lang)
         .then(data => {
-            localStorage.setItem(`city_${data.id}`, JSON.stringify(data))
+            localStorage.setItem(`city/${data.id}`, JSON.stringify(data))
             dispatch(setCurrentWeather())
             dispatch(setRefresh(false, id))
         })
@@ -16,14 +16,14 @@ export const getWeatherFromId = (id, lang) => dispatch => {
 export const getWeatherFromCoord = (lat, lon, lang) => dispatch => {
 
     weatherAPI.getCurrentWeatherFromCoord(lat, lon, lang)
-        .then(data => localStorage.setItem(`city_${data.id}`, JSON.stringify(data)))
+        .then(data => localStorage.setItem(`city/${data.id}`, JSON.stringify(data)))
     dispatch(setCurrentWeather())
 
 }
 export const addCity = (city, lang) => dispatch => {
     weatherAPI.getCurrentWeather(city, lang)
         .then(data => {
-            localStorage.setItem(`city_${data.id}`, JSON.stringify(data))
+            localStorage.setItem(`city/${data.id}`, JSON.stringify(data))
             dispatch(setCurrentWeather())
         })
 }
